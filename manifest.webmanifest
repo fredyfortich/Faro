@@ -1,0 +1,12 @@
+{
+  "name": "Faro — community relief needs map",
+  "short_name": "Faro",
+  "description": "Report what your household needs after a disaster; see where help is still missing, aggregated per neighborhood.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f6f5f1",
+  "theme_color": "#f6f5f1",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

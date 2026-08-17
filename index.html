@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Faro — mapa comunitario de necesidades</title>
+  <meta name="description" content="Prototipo: reporte lo que su hogar necesita tras un desastre y vea dónde aún falta ayuda, agregado por barrio o comuna.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f6f5f1">
+  <!-- Leaflet: vendored copy if present (offline-capable), CDN fallback otherwise.
+       See vendor/leaflet/README.md for how to restore the vendored copy. -->
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css"
+        onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-name">Faro</span>
+      <span id="tagline" class="tagline"></span>
+    </div>
+    <div class="header-actions">
+      <button id="lang-toggle" class="btn ghost small" aria-label="Language"></button>
+      <button id="about-btn" class="btn ghost small" aria-label="About">ⓘ</button>
+    </div>
+  </header>
+  <div id="demo-banner" class="demo-banner"></div>
+
+  <main>
+    <section id="view-needs"></section>
+    <section id="view-trends" hidden></section>
+    <section id="view-map" hidden>
+      <div id="map"></div>
+      <div class="map-overlays">
+        <div id="chips" class="chips"></div>
+        <div id="top-panel" class="top-panel card"></div>
+      </div>
+      <div id="map-legend" class="map-legend card"></div>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button data-tab="needs" class="active">
+      <span class="tab-ico">📋<b id="needs-badge" class="badge" hidden></b></span>
+      <span id="tab-needs-label" class="tab-label"></span>
+    </button>
+    <button data-tab="map">
+      <span class="tab-ico">🗺️</span>
+      <span id="tab-map-label" class="tab-label"></span>
+    </button>
+    <button data-tab="trends">
+      <span class="tab-ico">📈</span>
+      <span id="tab-trends-label" class="tab-label"></span>
+    </button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script>
+    // Vendored Leaflet missing? Load it from the CDN before the app scripts run.
+    if (!window.L) document.write('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script>');
+  </script>
+  <script src="js/config.js"></script>
+  <script src="js/strings.js"></script>
+  <script src="js/seed.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/basemap.js"></script>
+  <script src="js/map-view.js"></script>
+  <script src="js/needs-view.js"></script>
+  <script src="js/trends-view.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
