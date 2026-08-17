@@ -1,5 +1,12 @@
 # Faro — community relief needs map (working prototype)
 
+> **Nota sobre este despliegue:** esta versión del repositorio usa la
+> compilación de archivo único (todo el código va dentro de `index.html`),
+> pensada para subirse por el uploader web de GitHub sin carpetas. El árbol de
+> código fuente completo (js/, css/, vendor/…) descrito más abajo se subirá
+> por git cuando la app de GitHub tenga permiso de escritura — la funcionalidad
+> es idéntica.
+
 **Faro** ("lighthouse") is a prototype of the app you described: after an earthquake or
 other catastrophe, people register what their household still lacks, and a shared map
 shows government and relief organizations **where help is still missing** — per
